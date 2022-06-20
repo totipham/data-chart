@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies Data Comparing</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div style="width: 40%;"><canvas id="companyChart"></canvas></div>
+    <script>
+        const labels = [
+            'Company 1',
+            'Company 2',
+            'Company 3'
+        ]; //Change label for x-axis here
+
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Critical',
+                    data: [93, 23, 31], //Dataset relate to each label
+                    borderColor: "#a9343c",
+                    backgroundColor: "#a9343c"
+                },
+                {
+                    label: 'High',
+                    data: [11, 23, 31, 24], //Dataset relate to each label
+                    borderColor: "#fc4d21",
+                    backgroundColor: "#fc4d21"
+                },
+                {
+                    label: 'Medium',
+                    data: [53, 67, 65, 11], //Dataset relate to each label
+                    borderColor: "#ffc100",
+                    backgroundColor: "#ffc100"
+                },
+                {
+                    label: 'Low',
+                    data: [32, 12, 46, 2], //Dataset relate to each label
+                    borderColor: "#70974c",
+                    backgroundColor: "#70974c"
+                }
+            ]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Companies Data Comparing'
+                    }
+                }
+            }
+        };
+
+        const myChart = new Chart(
+            document.getElementById('companyChart'),
+            config
+        );
+    </script>
+</body>
+
+
+</html>
